@@ -1,4 +1,4 @@
-//write a program read any decimal number and dusplay equivalent hexadecimal number. 
+//write a program read any decimal number and display equivalent hexadecimal number. 
 #include<stdio.h>
 int main()
 {

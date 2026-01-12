@@ -1,4 +1,4 @@
-//write a program read any decimal number and dusplay equivalent Octal number. 
+//write a program read any decimal number and display equivalent Octal number. 
 #include<stdio.h>
 int main()
 {
