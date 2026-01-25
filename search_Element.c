@@ -17,7 +17,7 @@ int main()
         {
             printf("Element %d found at position %d\n", search, i + 1);
             found = 1;
-            break;
+            
         }
     }
     if (found ==0)
