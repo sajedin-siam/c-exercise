@@ -1,7 +1,7 @@
 #include<stdio.h>
 int main()
 {
-    int i, p, n, value, a[100];
+    int i, p, n, a[100];
     printf("Enter the number of array  element :");
     scanf("%d", &n);
 
@@ -16,25 +16,26 @@ int main()
     {
         printf("%d ", a[i]);
     }
-    printf("Enter new position :");
+    printf("Enter Delete position :");
     scanf("%d", &p);
-   if (p < 0 || p > n)
+  if (p < 0 || p >= n)
+
     {
         printf("Invalid position! Please enter a value between 0 and %d.\n", n);
         return 1; 
     }
     
-    printf("Enetr New Element:");
-    scanf("%d", &value);
+  ;
 
-    for ( i =n; i >p; i--)
+    for ( i =p; i<n-1; i++)
     {
-        a[i]=a[i-1];
+        a[i]=a[i+1];
     }
-    a[p]=value;
-    n++;
+   
+    n--;
 
-    printf("After insert Element:");
+    printf("Afterdelete Element:");
+
     for ( i =0; i < n; i++)
     {
         printf("%d ",a[i]);
