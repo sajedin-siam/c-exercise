@@ -1,45 +1,44 @@
-#include<stdio.h>
+#include <stdio.h>
 int main()
 {
-    int i, p, n, a[100];
-    printf("Enter the number of array  element :");
+    int n, a[100], i;
+    // Enter array size or Enter array element
+    printf("Enter how may number : ");
     scanf("%d", &n);
 
+    printf("Enter array element : ");
+    for (int k = 0; k < n; k++)
+    {
+        scanf("%d", &a[k]);
+    }
 
-    printf("Entr Array Element :");
-    for (i = 0; i < n; i++)
-    {
-        scanf("%d", &a[i]);
-    }
-    printf("Array Element :");
-    for (i = 0; i < n; i++)
-    {
-        printf("%d ", a[i]);
-    }
-    printf("Enter Delete position :");
-    scanf("%d", &p);
-  if (p < 0 || p >= n)
+    printf("Enter Delet positionm :");
+    scanf("%d", &i);
 
+    // check if array has element
+    if (n == 0)
     {
-        printf("Invalid position! Please enter a value between 0 and %d.\n", n);
-        return 1; 
+        printf("Array is emptry.delet is not posibile");
+        return 1;
     }
-    
-  ;
-
-    for ( i =p; i<n-1; i++)
+    // check if nposition is Valid
+    if (i < 0 || i >= n)
     {
-        a[i]=a[i+1];
+        printf("INvalid position");
+        return 1;
     }
-   
+    // shift element
+    for (int j = i; j < n - 1; j++)
+    {
+        a[j] = a[j + 1];
+    }
     n--;
 
-    printf("Afterdelete Element:");
-
-    for ( i =0; i < n; i++)
+    // After delete
+    printf("AFter delete Array Element :");
+    for (int k = 0; k < n; k++)
     {
-        printf("%d ",a[i]);
+        printf("%d ", a[k]);
     }
     return 0;
-
 }
