@@ -1,44 +1,47 @@
-#include<stdio.h>
+#include <stdio.h>
+#define max 100
 int main()
 {
-    int i, p, n, value, a[100];
-    printf("Enter the number of array  element :");
+    int A[max], n, i, v;
+    // array size
+    printf("Enter How many number:");
     scanf("%d", &n);
-
-
-    printf("Entr Array Element :");
-    for (i = 0; i < n; i++)
+    // Enter the array element
+    printf("enter %d Element: ", n);
+    for (int k = 0; k < n; k++)
     {
-        scanf("%d", &a[i]);
+        scanf("%d", &A[k]);
     }
-    printf("Array Element :");
-    for (i = 0; i < n; i++)
+    // Entre position
+    printf("ENter Position to insert (0 to %d):", n);
+    scanf("%d", &i);
+    // Entre new value
+    printf("ENter Value : ");
+    scanf("%d", &v);
+    // check overflow
+    if (n >= max)
     {
-        printf("%d ", a[i]);
+        printf("Array is full\n");
+        return 1;
     }
-    printf("Enter new position :");
-    scanf("%d", &p);
-   if (p < 0 || p > n)
+    if (i < 0 || i > n)
     {
-        printf("Invalid position! Please enter a value between 0 and %d.\n", n);
-        return 1; 
+        printf("Invalid position \n");
+        return 1;
     }
-    
-    printf("Enetr New Element:");
-    scanf("%d", &value);
-
-    for ( i =n; i >p; i--)
+    // shift Element
+    for (int j = n - 1; j >= i; j--)
     {
-        a[i]=a[i-1];
+        A[j + 1] = A[j];
     }
-    a[p]=value;
+    // insert
+    A[i] = v;
     n++;
-
-    printf("After insert Element:");
-    for ( i =0; i < n; i++)
+    // display
+    printf("Array After insert :");
+    for (int k = 0; k < n; k++)
     {
-        printf("%d ",a[i]);
+        printf("%d ", A[k]);
     }
     return 0;
-
 }
