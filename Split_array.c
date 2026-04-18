@@ -1,46 +1,51 @@
 #include <stdio.h>
 int main()
 {
-    int i, n, j = -1, k = -1;
-    int A[100], EVEN[100], ODD[100];
-    printf("Enter the number of element:");
+    int a[100], b[100], c[100], m1 = 0, m2 = 0, n;
+    printf("Enter array size :");
     scanf("%d", &n);
-    if (n == 0)
-    {
-        printf("Array is empty\n");
-        return 0;
-    }
 
-    printf("enter the element :");
-    for (i = 0; i < n; i++)
+    printf("entr array Element :");
+    for (int i = 0; i < n; i++)
     {
-        scanf("%d", &A[i]);
+        scanf("%d", &a[i]);
     }
-    i = 0;
-    while (i < n)
+    if (a[100]==0)
     {
-        if (A[i] % 2 == 0)
+       printf("Array is empty");
+       return 1;
+    }
+    
+
+    for (int i = 0; i < n; i++)
+    {
+        if (a[i] % 2 == 0) // even number
         {
-            j++;
-            EVEN[j] = A[i];
+            b[m1] = a[i];
+            m1++;
         }
         else
-        {
-            k++;
-            ODD[k] = A[i];
+        { // odd number
+            c[m2] = a[i];
+            m2++;
         }
-        i++;
     }
 
-    printf("\nEven number:\n");
-    for (int x = 0; x <= j; x++)
+    // display
+    printf("Entered array element :\n");
+    for (int i = 0; i < n; i++)
     {
-        printf("%d ", EVEN[x]);
+        printf("%d ", a[i]);
     }
-    printf("\nOdd number:\n");
-    for (int x = 0; x <= k; x++)
+    printf("Eeven element :\n");
+    for (int i = 0; i < m1; i++)
     {
-        printf("%d ", ODD[x]);
+        printf("%d ", b[i]);
+    }
+    printf("odd element :\n");
+    for (int i = 0; i < m2; i++)
+    {
+        printf("%d ", c[i]);
     }
     return 0;
 }
