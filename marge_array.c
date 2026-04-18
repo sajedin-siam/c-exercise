@@ -1,51 +1,54 @@
-#include <stdio.h>
+#include<stdio.h>
 int main()
 {
-    int a[100], b[100], c[100], m1 = 0, m2 = 0, n;
-    printf("Enter array size :");
-    scanf("%d", &n);
+    int a[100],b[100],c[100],m1,m2;
 
-    printf("entr array Element :");
-    for (int i = 0; i < n; i++)
+    printf("Enter first array size :");
+    scanf("%d",&m1);
+    printf("Enter first array :");
+    for (int i = 0; i < m1; i++)
     {
-        scanf("%d", &a[i]);
-    }
-    if (a[100]==0)
-    {
-       printf("Array is empty");
-       return 1;
+         scanf("%d",&b[i]);
     }
     
 
-    for (int i = 0; i < n; i++)
+    printf("Enter second array size :");
+    scanf("%d",&m2);
+    printf("Enter second array :");
+    for (int  i = 0; i < m2; i++)
     {
-        if (a[i] % 2 == 0) // even number
-        {
-            b[m1] = a[i];
-            m1++;
-        }
-        else
-        { // odd number
-            c[m2] = a[i];
-            m2++;
-        }
+        scanf("%d",&c[i]);
     }
+    //copy first array
+    for (int  i = 0; i <m1; i++)
+    {
+        a[i]=b[i];
+    }
+    //copy second array 
+    for (int  i = 0; i < m2; i++)
+    {
+        a[m1+i]=c[i];
+    }
+    int n=m1+m2;
 
-    // display
-    printf("Entered array element :\n");
-    for (int i = 0; i < n; i++)
+    //display first array 
+    printf("First array :\n");
+    for (int  i = 0; i < m1; i++)
     {
-        printf("%d ", a[i]);
+        printf("%d ",b[i]);
     }
-    printf("Eeven element :\n");
-    for (int i = 0; i < m1; i++)
+      //display Second array 
+    printf("Second array :\n");
+    for (int  i = 0; i < m2; i++)
     {
-        printf("%d ", b[i]);
+        printf("%d ",c[i]);
     }
-    printf("odd element :\n");
-    for (int i = 0; i < m2; i++)
+       //display Marge array 
+    printf("Marge array :\n");
+    for (int  i = 0; i < n; i++)
     {
-        printf("%d ", c[i]);
+        printf("%d ",a[i]);
     }
+    printf("\n");
     return 0;
 }
