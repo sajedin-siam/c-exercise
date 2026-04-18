@@ -10,6 +10,12 @@ int main()
     {
         scanf("%d", &a[i]);
     }
+    if (a[100]==0)
+    {
+       printf("Array is empty");
+       return 1;
+    }
+    
 
     for (int i = 0; i < n; i++)
     {
