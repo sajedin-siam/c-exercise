@@ -1,48 +1,45 @@
 #include <stdio.h>
-
 int main()
 {
-    int B[100], C[100], A[200];
-    int b, a, c;
-    int i, j;
+    int a[100], b[100], c[100], m1 = 0, m2 = 0, n;
+    printf("Enter array size :");
+    scanf("%d", &n);
 
-    printf("Enter number of elements in B: ");
-    scanf("%d", &b);
-
-    printf("Enter %d elements for B:\n", b);
-    for (i = 0; i < b; i++)
+    printf("entr array Element :");
+    for (int i = 0; i < n; i++)
     {
-        scanf("%d", &B[i]);
+        scanf("%d", &a[i]);
     }
 
-    printf("Enter number of elements in C: ");
-    scanf("%d", &a);
-
-    printf("Enter %d elements for C:\n", a);
-    for (i = 0; i < a; i++)
+    for (int i = 0; i < n; i++)
     {
-        scanf("%d", &C[i]);
+        if (a[i] % 2 == 0) // even number
+        {
+            b[m1] = a[i];
+            m1++;
+        }
+        else
+        { // odd number
+            c[m2] = a[i];
+            m2++;
+        }
     }
 
-    j = 0;
-    for (i = 0; i < b; i++)
+    // display
+    printf("Entered array element :\n");
+    for (int i = 0; i < n; i++)
     {
-        A[j] = B[i];
-        j++;
+        printf("%d ", a[i]);
     }
-    for (i = 0; i < a; i++)
+    printf("Eeven element :\n");
+    for (int i = 0; i < m1; i++)
     {
-        A[j] = C[i];
-        j++;
+        printf("%d ", b[i]);
     }
-
-    c = b + a;
-
-    printf("\nMerged Array (A): ");
-    for (i = 0; i < c; i++)
+    printf("odd element :\n");
+    for (int i = 0; i < m2; i++)
     {
-        printf("%d ", A[i]);
+        printf("%d ", c[i]);
     }
-
     return 0;
 }
